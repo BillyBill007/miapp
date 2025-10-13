@@ -1,0 +1,24 @@
+#root{
+  margin: 0 auto;
+
+  --breakpoint-xs: 300px
+  --breakpoint-sm: 600px
+  --breakpoint-md: 900px
+  --breakpoint-lg: 1200x
+  --breakpoint-xl: 1536px
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+
