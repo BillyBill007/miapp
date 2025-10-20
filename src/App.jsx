@@ -1,15 +1,45 @@
 import './App.css'
 import { useState } from 'react'
-import Button from '@mui/material/Button'
-import Avatar from '@mui/material/Avatar';
-import Typography from '@mui/material/Typography';
-import animal from './assets/animal.jpg'
-import { Stack } from '@mui/system';
-import FormRegistro2 from './components/FormRegistro2.jsx';
+//import FormRegistro2 from './components/FormRegistro2.jsx';
 import Ficha from './components/Ficha.jsx';
+import {cat, dog, bird, turtle } from './assets/index.js'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const animals = [
+    {
+      id: 0,
+      animal: 'gato',
+      atribute: 'feliz',
+      Image: cat,
+      imageSize: 150,
+      description: 'Gato común',
+    },
+    {
+      id: 1,
+      animal: 'perro',
+      atribute: 'bello',
+      Image: dog,
+      imageSize: 150,
+      description: 'Perro callejero',
+    },
+    {
+      id: 2,
+      animal: 'loro',
+      atribute: 'hablador',
+      Image: bird,
+      imageSize: 150,
+      description: 'Loro de la jungla',
+    },
+    {
+      id: 3,
+      animal: 'tortuga',
+      atribute: 'perezosa',
+      Image: turtle,
+      imageSize: 150,
+      description: 'Tortuga',
+    },
+  ];
+
 
   return (
     <>
@@ -22,24 +52,26 @@ function App() {
     alignItems: "center",
     }}></Stack>*/}
 
-    <Stack direction={{ xs: 'row', sm: 'column' }}
-    spacing={{ xs: 1, sm: 2 }} 
-    sx={{justifyContent: "center",alignItems: "center"}}>
-      <div>
-         <Avatar sx={{height:'300px', width:'300px'}} src={animal} className="animal" alt="Animal"></Avatar>
-      </div>
-      <Typography variant='h2'>Rasca al animal</Typography>
-      <div className="card">
-        <Button size='large' variant='text' sx={{color: 'red', backgroundColor: 'black'}} onClick={() => setCount((count) => count + 1)}>
-          Me has hecho {count} rascaditas
-        </Button>
-      </div>
-      </Stack>
-
-      <FormRegistro2 />
-      <Ficha />
+      {/* <FormRegistro2 />*/}
+      
+       <div>
+      <h1>Ficha de animales</h1>
+      {animals.map((animal) => 
+        <Ficha
+          key={animal.id}
+          animal={animal.animal}
+          atribute={animal.atribute}
+          Image={animal.Image}
+          imageSize={animal.imageSize}
+          description={animal.description}
+        />
+      )}
+    </div>
     </>
   )
 }
+
+
 export default App
+
 
