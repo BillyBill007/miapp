@@ -1,36 +1,26 @@
-import { useState } from 'react'
 import './App.css'
+import { useState } from 'react'
 import Button from '@mui/material/Button'
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import animal from './assets/animal.jpg'
 import { Stack } from '@mui/system';
-
-
-
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import Appgrid from './Appgrid.jsx'  // importa el nuevo componente
-import './index.css'
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Appgrid />
-  </React.StrictMode>,
-)
+import FormRegistro2 from './components/FormRegistro2.jsx';
+import Ficha from './components/Ficha.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Stack
-      direction="row"
-      spacing={2}
-      sx={{
-      justifyContent: "center",
-     alignItems: "center",
-    }}></Stack>
+    {/* Lo mismo que esta hacho pero en horizontal
+    <Stack
+    direction="row"
+    spacing={2}
+    sx={{
+    justifyContent: "center",
+    alignItems: "center",
+    }}></Stack>*/}
 
     <Stack direction={{ xs: 'row', sm: 'column' }}
     spacing={{ xs: 1, sm: 2 }} 
@@ -43,9 +33,13 @@ function App() {
         <Button size='large' variant='text' sx={{color: 'red', backgroundColor: 'black'}} onClick={() => setCount((count) => count + 1)}>
           Me has hecho {count} rascaditas
         </Button>
-       </div>
-     </Stack>
-   </>
+      </div>
+      </Stack>
+
+      <FormRegistro2 />
+      <Ficha />
+    </>
   )
 }
 export default App
+

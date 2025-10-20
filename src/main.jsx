@@ -2,12 +2,11 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import Appgrid from './Appgrid.jsx'
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App/>
-    <Appgrid/>
   </StrictMode>,
 )
 
